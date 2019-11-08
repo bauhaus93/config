@@ -1,0 +1,7 @@
+[user]
+	email = jakobfischer93@gmail.com
+	name = Jakob Fischer
+[branch]
+	autosetupmerge = always
+[merge]
+	ff = false
