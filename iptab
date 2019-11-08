@@ -1,0 +1,11 @@
+#!/bin/bash
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -m pkttype --pkt-type broadcast -j ACCEPT
+iptables -A INPUT -m pkttype --pkt-type multicast -j ACCEPT
+iptables -A INPUT -j LOG --log-prefix "iptables rejected:" -m limit --limit 5/min
+iptables -A INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
+iptables -A INPUT -p tcp -j REJECT --reject-with tcp-reset
+iptables -A INPUT -j REJECT --reject-with icmp-proto-unreachable
+
+iptables -P FORWARD DROP

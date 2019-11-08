@@ -1,0 +1,16 @@
+URxvt*foreground: White
+URxvt*background: Black
+URxvt*transparent: true
+URxvt*shading: 10
+URxvt*saveline: 8192
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*underlineURLs: true
+URxvt*urlLauncher: firefox
+
+URxvt*font:-*-courier-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+! blue
+*.color4: #2587cc
+*.color12: #2ca2f5
+
+URxvt.perl-ext-common: selection-to-clipboard

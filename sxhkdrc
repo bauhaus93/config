@@ -1,0 +1,58 @@
+#
+# wm independent hotkeys
+#
+
+
+super + alt + r
+	sudo reboot
+
+super + alt + s
+	sudo poweroff
+
+# terminal emulator
+super + Return
+	urxvt
+
+# program launcher
+super + r
+	dmenu_run -b
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#
+# focus/swap
+#
+
+# focus the next/previous node in the current desktop
+super + comma
+	bspc node -f next.local
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
